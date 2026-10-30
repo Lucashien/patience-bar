@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BA4FA98F46628439643F7A3 /* WeatherStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */; };
+		1CF6F9FF79FEC46C4F038C78 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D96A67A4C188C5D8D99530 /* Theme.swift */; };
+		1D1AEEDE4E170F06141337AC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F5802E3D562159F6F5F2D4C /* FirebaseFirestore */; };
+		1E76F056B5AC66578673D586 /* LocalBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DFA2BCAD421C0A13F0BB0 /* LocalBackend.swift */; };
+		227D68FEB9C99748DB3EAB2A /* PatienceIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98924635BFBD859C372C236 /* PatienceIntents.swift */; };
+		2935EFF511B36B46F13A2CE8 /* ActionApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */; };
+		3089F5FBD28CA51D1D89D888 /* PatienceWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3D952BEA2FA9AA6FA2D223FE /* PatienceWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3564C165C916B024DF351C96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA307CBCCCCEBEA4DE62ED67 /* GoogleService-Info.plist */; };
+		44EEB6B2AF9710555BBC7C35 /* Patience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03480F205EDED4F2F5DFB31 /* Patience.swift */; };
+		476F209E9FB08317A7033CAF /* PatienceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3D9D172922CFBFB7E5082 /* PatienceEngine.swift */; };
+		4F4B635B59387C00323002CF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61DF14386278DEB7542CBC /* RootView.swift */; };
+		55E76DFCCEEF1E3AE8C349FF /* WeatherStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */; };
+		59AE1EA020502BDBA1D8F4CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3BB36098225C406B00DFA7 /* HomeView.swift */; };
+		5A404EC8392397D0E4662D8B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7E26DC78CE87E64A9E9540BC /* FirebaseAuth */; };
+		5ABB3F37E7ACB48030E8F248 /* SharedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C0B08F42001075824A70C /* SharedCache.swift */; };
+		5CD51EB78547B6A39B07CCF5 /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB1662BDC7490E61566540 /* PairingView.swift */; };
+		65AEF9A9BA4166AE865A33DE /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE430D43902C1A879D181B /* Copy.swift */; };
+		672718BA9916DDBEB2A757D1 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED560A387844AB77516AD183 /* EventItem.swift */; };
+		6B8D95BBA9082F6F03DA89E9 /* CoupleBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED287397EE0E485A280503 /* CoupleBackend.swift */; };
+		743134211B627BB54C261DC0 /* PatienceEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E1C4FB88B71C12BF807FA /* PatienceEngineTests.swift */; };
+		77F0BDA87BE23DA11B53704A /* FirestoreBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15FA7C8984E163E88CAB844 /* FirestoreBackend.swift */; };
+		914BC6991BFF4CBF785B5291 /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE430D43902C1A879D181B /* Copy.swift */; };
+		988077F00D8674E84BC430BA /* CoupleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E3C28F3EB859E9424BC8B /* CoupleStore.swift */; };
+		A4018CC85CCCB093DA53F2B5 /* PatienceBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026A672D8B8A7E2D7DE935F5 /* PatienceBarApp.swift */; };
+		A54FFDD14CAD3240B921EBAF /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED560A387844AB77516AD183 /* EventItem.swift */; };
+		AC3B2BF770CBC5B16E28AB3E /* PatienceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195F6F7A7DB05510C9B1DB2 /* PatienceWidget.swift */; };
+		AD623302FA21BC6D7CB3F9BF /* LocalBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DFA2BCAD421C0A13F0BB0 /* LocalBackend.swift */; };
+		ADE3766ECD1021F3F07BD160 /* FirebaseSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBE506A53ECE137586A4C4 /* FirebaseSupport.swift */; };
+		B9C6E00B5AEC3EA1126443E5 /* Patience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03480F205EDED4F2F5DFB31 /* Patience.swift */; };
+		BB5209B2092BC6A647AD29B6 /* PatienceIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98924635BFBD859C372C236 /* PatienceIntents.swift */; };
+		C4DD26ED76AA7F4A4F3C3498 /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C55156F382005884C63511 /* Shortcuts.swift */; };
+		C6CE1B85815F6797976475A0 /* CoupleBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED287397EE0E485A280503 /* CoupleBackend.swift */; };
+		D7107CC91A9B9A9E75F4979F /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F0198ECEE2009693255D6 /* EventsView.swift */; };
+		DD5D7627E4E0330F623A0FB8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D96A67A4C188C5D8D99530 /* Theme.swift */; };
+		DECDD8395F9BA3325A9A9323 /* PatienceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3D9D172922CFBFB7E5082 /* PatienceEngine.swift */; };
+		E0980538A51701FCA02B21D9 /* ActionApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */; };
+		FB8565F1BBD4089537DB7986 /* SharedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C0B08F42001075824A70C /* SharedCache.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D042FE9E33A7270F8903E08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B54B42D5D27F96086A11BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25B0F78CD886407EA2ABF775;
+			remoteInfo = PatienceBar;
+		};
+		32094592C1EE9B254DE86B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B54B42D5D27F96086A11BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A3F7C443EBBFA62602E433C;
+			remoteInfo = PatienceWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66F33DAFDC1565035F5C5078 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3089F5FBD28CA51D1D89D888 /* PatienceWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0195A8082BC342D1892BAC49 /* PatienceBarTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PatienceBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		026A672D8B8A7E2D7DE935F5 /* PatienceBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceBarApp.swift; sourceTree = "<group>"; };
+		06DBE506A53ECE137586A4C4 /* FirebaseSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSupport.swift; sourceTree = "<group>"; };
+		0700AC8C37B6A0B135C46615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		08DB1662BDC7490E61566540 /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
+		252CD154A42CF6E4978AA33C /* PatienceBar.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PatienceBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A3D9D172922CFBFB7E5082 /* PatienceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEngine.swift; sourceTree = "<group>"; };
+		3D952BEA2FA9AA6FA2D223FE /* PatienceWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PatienceWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		41DE430D43902C1A879D181B /* Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
+		438DFA2BCAD421C0A13F0BB0 /* LocalBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBackend.swift; sourceTree = "<group>"; };
+		43BDAA37CE0E8E27824422AE /* PatienceBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PatienceBar.entitlements; sourceTree = "<group>"; };
+		4A4E1C4FB88B71C12BF807FA /* PatienceEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEngineTests.swift; sourceTree = "<group>"; };
+		50C55156F382005884C63511 /* Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
+		57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStyle.swift; sourceTree = "<group>"; };
+		6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApplier.swift; sourceTree = "<group>"; };
+		6E61DF14386278DEB7542CBC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		6FD0B208153A43B70665CFDB /* PatienceWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PatienceWidget.entitlements; sourceTree = "<group>"; };
+		955E3C28F3EB859E9424BC8B /* CoupleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleStore.swift; sourceTree = "<group>"; };
+		9EED287397EE0E485A280503 /* CoupleBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleBackend.swift; sourceTree = "<group>"; };
+		A03480F205EDED4F2F5DFB31 /* Patience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patience.swift; sourceTree = "<group>"; };
+		AA3C0B08F42001075824A70C /* SharedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCache.swift; sourceTree = "<group>"; };
+		B15FA7C8984E163E88CAB844 /* FirestoreBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreBackend.swift; sourceTree = "<group>"; };
+		B6D96A67A4C188C5D8D99530 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BB6F0198ECEE2009693255D6 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		C51A768B33832AF32A26F37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C98924635BFBD859C372C236 /* PatienceIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceIntents.swift; sourceTree = "<group>"; };
+		CA307CBCCCCEBEA4DE62ED67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED560A387844AB77516AD183 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
+		F195F6F7A7DB05510C9B1DB2 /* PatienceWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceWidget.swift; sourceTree = "<group>"; };
+		FB3BB36098225C406B00DFA7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73CF5815007BB0D1E4CDB58C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A404EC8392397D0E4662D8B /* FirebaseAuth in Frameworks */,
+				1D1AEEDE4E170F06141337AC /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8031611883850CE28861F5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B6D96A67A4C188C5D8D99530 /* Theme.swift */,
+				57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		12547619A9ACF1E049B099BD /* PatienceBar */ = {
+			isa = PBXGroup;
+			children = (
+				955E3C28F3EB859E9424BC8B /* CoupleStore.swift */,
+				06DBE506A53ECE137586A4C4 /* FirebaseSupport.swift */,
+				B15FA7C8984E163E88CAB844 /* FirestoreBackend.swift */,
+				CA307CBCCCCEBEA4DE62ED67 /* GoogleService-Info.plist */,
+				C51A768B33832AF32A26F37E /* Info.plist */,
+				43BDAA37CE0E8E27824422AE /* PatienceBar.entitlements */,
+				026A672D8B8A7E2D7DE935F5 /* PatienceBarApp.swift */,
+				6E61DF14386278DEB7542CBC /* RootView.swift */,
+				50C55156F382005884C63511 /* Shortcuts.swift */,
+				E94BB5878A9253DFDAC90A48 /* Home */,
+				6D94E29C91DE64B571967E1F /* Pairing */,
+			);
+			path = PatienceBar;
+			sourceTree = "<group>";
+		};
+		3958B02514CB8F029846A5FF /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				C98924635BFBD859C372C236 /* PatienceIntents.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		4DDE240D841D9F68DF268C6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				252CD154A42CF6E4978AA33C /* PatienceBar.app */,
+				0195A8082BC342D1892BAC49 /* PatienceBarTests.xctest */,
+				3D952BEA2FA9AA6FA2D223FE /* PatienceWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D94E29C91DE64B571967E1F /* Pairing */ = {
+			isa = PBXGroup;
+			children = (
+				08DB1662BDC7490E61566540 /* PairingView.swift */,
+			);
+			path = Pairing;
+			sourceTree = "<group>";
+		};
+		7440EEE9EED3D9ABB27F38E1 /* PatienceWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0700AC8C37B6A0B135C46615 /* Info.plist */,
+				6FD0B208153A43B70665CFDB /* PatienceWidget.entitlements */,
+				F195F6F7A7DB05510C9B1DB2 /* PatienceWidget.swift */,
+			);
+			path = PatienceWidget;
+			sourceTree = "<group>";
+		};
+		AFC3178FF741D11F27CF73FE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				41DE430D43902C1A879D181B /* Copy.swift */,
+				9EED287397EE0E485A280503 /* CoupleBackend.swift */,
+				438DFA2BCAD421C0A13F0BB0 /* LocalBackend.swift */,
+				AA3C0B08F42001075824A70C /* SharedCache.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFC09E6C375289173F036522 = {
+			isa = PBXGroup;
+			children = (
+				12547619A9ACF1E049B099BD /* PatienceBar */,
+				E3FF79F86CBF9C3137B94CE7 /* PatienceBarTests */,
+				7440EEE9EED3D9ABB27F38E1 /* PatienceWidget */,
+				FA622BAC7F8A93AD6EB6FA5A /* Shared */,
+				4DDE240D841D9F68DF268C6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C58B923152954BE80863FA5D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */,
+				32A3D9D172922CFBFB7E5082 /* PatienceEngine.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		E3FF79F86CBF9C3137B94CE7 /* PatienceBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E1C4FB88B71C12BF807FA /* PatienceEngineTests.swift */,
+			);
+			path = PatienceBarTests;
+			sourceTree = "<group>";
+		};
+		E94BB5878A9253DFDAC90A48 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F0198ECEE2009693255D6 /* EventsView.swift */,
+				FB3BB36098225C406B00DFA7 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F969424825C90093518B4848 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED560A387844AB77516AD183 /* EventItem.swift */,
+				A03480F205EDED4F2F5DFB31 /* Patience.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA622BAC7F8A93AD6EB6FA5A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3958B02514CB8F029846A5FF /* Intents */,
+				C58B923152954BE80863FA5D /* Logic */,
+				F969424825C90093518B4848 /* Models */,
+				AFC3178FF741D11F27CF73FE /* Services */,
+				0F8031611883850CE28861F5 /* UI */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25B0F78CD886407EA2ABF775 /* PatienceBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7703782105E9B86A1AC3171E /* Build configuration list for PBXNativeTarget "PatienceBar" */;
+			buildPhases = (
+				E4B0B6F90B1F2E9F29B2100B /* Sources */,
+				78F9FB2844C3272D29C1E8D9 /* Resources */,
+				73CF5815007BB0D1E4CDB58C /* Frameworks */,
+				66F33DAFDC1565035F5C5078 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				782A94E421C122E9F8D5C1A8 /* PBXTargetDependency */,
+			);
+			name = PatienceBar;
+			packageProductDependencies = (
+				7E26DC78CE87E64A9E9540BC /* FirebaseAuth */,
+				1F5802E3D562159F6F5F2D4C /* FirebaseFirestore */,
+			);
+			productName = PatienceBar;
+			productReference = 252CD154A42CF6E4978AA33C /* PatienceBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3828039B342193CA32455789 /* PatienceBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0571A806D5514465486F8B9 /* Build configuration list for PBXNativeTarget "PatienceBarTests" */;
+			buildPhases = (
+				F6F3463644E4A43F3D90805A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1AF58CFA29D1F41CE683B5A /* PBXTargetDependency */,
+			);
+			name = PatienceBarTests;
+			packageProductDependencies = (
+			);
+			productName = PatienceBarTests;
+			productReference = 0195A8082BC342D1892BAC49 /* PatienceBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A3F7C443EBBFA62602E433C /* PatienceWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C99A0403ED161524D1654FE /* Build configuration list for PBXNativeTarget "PatienceWidget" */;
+			buildPhases = (
+				D8989A8E090BBCB53CF818C2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PatienceWidget;
+			packageProductDependencies = (
+			);
+			productName = PatienceWidget;
+			productReference = 3D952BEA2FA9AA6FA2D223FE /* PatienceWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4B54B42D5D27F96086A11BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					25B0F78CD886407EA2ABF775 = {
+						DevelopmentTeam = 5YCKGQ339N;
+						ProvisioningStyle = Automatic;
+					};
+					3828039B342193CA32455789 = {
+						DevelopmentTeam = 5YCKGQ339N;
+						ProvisioningStyle = Automatic;
+					};
+					3A3F7C443EBBFA62602E433C = {
+						DevelopmentTeam = 5YCKGQ339N;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 29F52A38CAFFFB82264B8F7C /* Build configuration list for PBXProject "PatienceBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BFC09E6C375289173F036522;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F32511DED455C4658A0FE2B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4DDE240D841D9F68DF268C6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25B0F78CD886407EA2ABF775 /* PatienceBar */,
+				3A3F7C443EBBFA62602E433C /* PatienceWidget */,
+				3828039B342193CA32455789 /* PatienceBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78F9FB2844C3272D29C1E8D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3564C165C916B024DF351C96 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8989A8E090BBCB53CF818C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2935EFF511B36B46F13A2CE8 /* ActionApplier.swift in Sources */,
+				65AEF9A9BA4166AE865A33DE /* Copy.swift in Sources */,
+				C6CE1B85815F6797976475A0 /* CoupleBackend.swift in Sources */,
+				A54FFDD14CAD3240B921EBAF /* EventItem.swift in Sources */,
+				AD623302FA21BC6D7CB3F9BF /* LocalBackend.swift in Sources */,
+				B9C6E00B5AEC3EA1126443E5 /* Patience.swift in Sources */,
+				476F209E9FB08317A7033CAF /* PatienceEngine.swift in Sources */,
+				227D68FEB9C99748DB3EAB2A /* PatienceIntents.swift in Sources */,
+				AC3B2BF770CBC5B16E28AB3E /* PatienceWidget.swift in Sources */,
+				FB8565F1BBD4089537DB7986 /* SharedCache.swift in Sources */,
+				DD5D7627E4E0330F623A0FB8 /* Theme.swift in Sources */,
+				55E76DFCCEEF1E3AE8C349FF /* WeatherStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B0B6F90B1F2E9F29B2100B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0980538A51701FCA02B21D9 /* ActionApplier.swift in Sources */,
+				914BC6991BFF4CBF785B5291 /* Copy.swift in Sources */,
+				6B8D95BBA9082F6F03DA89E9 /* CoupleBackend.swift in Sources */,
+				988077F00D8674E84BC430BA /* CoupleStore.swift in Sources */,
+				672718BA9916DDBEB2A757D1 /* EventItem.swift in Sources */,
+				D7107CC91A9B9A9E75F4979F /* EventsView.swift in Sources */,
+				ADE3766ECD1021F3F07BD160 /* FirebaseSupport.swift in Sources */,
+				77F0BDA87BE23DA11B53704A /* FirestoreBackend.swift in Sources */,
+				59AE1EA020502BDBA1D8F4CB /* HomeView.swift in Sources */,
+				1E76F056B5AC66578673D586 /* LocalBackend.swift in Sources */,
+				5CD51EB78547B6A39B07CCF5 /* PairingView.swift in Sources */,
+				44EEB6B2AF9710555BBC7C35 /* Patience.swift in Sources */,
+				A4018CC85CCCB093DA53F2B5 /* PatienceBarApp.swift in Sources */,
+				DECDD8395F9BA3325A9A9323 /* PatienceEngine.swift in Sources */,
+				BB5209B2092BC6A647AD29B6 /* PatienceIntents.swift in Sources */,
+				4F4B635B59387C00323002CF /* RootView.swift in Sources */,
+				5ABB3F37E7ACB48030E8F248 /* SharedCache.swift in Sources */,
+				C4DD26ED76AA7F4A4F3C3498 /* Shortcuts.swift in Sources */,
+				1CF6F9FF79FEC46C4F038C78 /* Theme.swift in Sources */,
+				0BA4FA98F46628439643F7A3 /* WeatherStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F3463644E4A43F3D90805A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743134211B627BB54C261DC0 /* PatienceEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		782A94E421C122E9F8D5C1A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A3F7C443EBBFA62602E433C /* PatienceWidget */;
+			targetProxy = 32094592C1EE9B254DE86B65 /* PBXContainerItemProxy */;
+		};
+		F1AF58CFA29D1F41CE683B5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25B0F78CD886407EA2ABF775 /* PatienceBar */;
+			targetProxy = 0D042FE9E33A7270F8903E08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41A284F7A470DA6AD4B95B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PatienceBar/PatienceBar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PatienceBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.patiencebar;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		488E3849B8EEAE6D353DBFB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.PatienceBarTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PatienceBar.app/PatienceBar";
+			};
+			name = Release;
+		};
+		4933D898FAC1051949D35A15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PatienceWidget/PatienceWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PatienceWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.patiencebar.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84135AF4183A1CDBACFEF851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5YCKGQ339N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B3D46ACFE3FB9A5593E45F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.PatienceBarTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PatienceBar.app/PatienceBar";
+			};
+			name = Debug;
+		};
+		C259E769AE129974DDC03913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5YCKGQ339N;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D088D3E1FFB879567466C801 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PatienceBar/PatienceBar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PatienceBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.patiencebar;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F604B7DB3BCA6D098F2291C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PatienceWidget/PatienceWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PatienceWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucashsien.patiencebar.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29F52A38CAFFFB82264B8F7C /* Build configuration list for PBXProject "PatienceBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84135AF4183A1CDBACFEF851 /* Debug */,
+				C259E769AE129974DDC03913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6C99A0403ED161524D1654FE /* Build configuration list for PBXNativeTarget "PatienceWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4933D898FAC1051949D35A15 /* Debug */,
+				F604B7DB3BCA6D098F2291C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7703782105E9B86A1AC3171E /* Build configuration list for PBXNativeTarget "PatienceBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41A284F7A470DA6AD4B95B26 /* Debug */,
+				D088D3E1FFB879567466C801 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A0571A806D5514465486F8B9 /* Build configuration list for PBXNativeTarget "PatienceBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B3D46ACFE3FB9A5593E45F /* Debug */,
+				488E3849B8EEAE6D353DBFB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F32511DED455C4658A0FE2B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F5802E3D562159F6F5F2D4C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32511DED455C4658A0FE2B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		7E26DC78CE87E64A9E9540BC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32511DED455C4658A0FE2B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D4B54B42D5D27F96086A11BE /* Project object */;
+}

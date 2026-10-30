@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>A 天氣窗</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Noto Sans TC',system-ui,sans-serif}
+</style>
+</helmet>
+<div style="width:940px;height:900px;box-sizing:border-box;background:#F4EEE6;display:flex;gap:56px;padding:28px 40px;align-items:flex-start">
+
+<!-- phone -->
+<div style="width:390px;height:844px;border-radius:52px;border:10px solid #1B1B1F;box-sizing:border-box;overflow:hidden;position:relative;background:linear-gradient(180deg,#FFE7B0 0%,#FFC98F 55%,#FFB27A 100%);color:#2B2433;flex-shrink:0">
+  <div style="position:absolute;left:50%;top:-40px;width:420px;height:420px;margin-left:-210px;border-radius:50%;background:radial-gradient(circle,rgba(255,244,200,.95) 0%,rgba(255,226,150,.55) 38%,rgba(255,226,150,0) 70%)"></div>
+  <div style="position:relative;padding:62px 22px 22px;display:flex;flex-direction:column;gap:14px;height:100%;box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:15px;font-weight:700;letter-spacing:.08em;opacity:.7">耐心條</span>
+      <span style="font-size:13px;font-weight:500;opacity:.7">下午 2:40</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:6px">
+      <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="#E8960F" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="#F7B32B"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+      <div style="font-size:88px;font-weight:900;line-height:1;letter-spacing:-.02em">71</div>
+      <div style="font-size:20px;font-weight:700">我心情不錯</div>
+    </div>
+
+    <div style="height:18px;border-radius:9px;background:rgba(43,36,51,.14);overflow:hidden;margin:4px 6px 0">
+      <div style="width:71%;height:100%;border-radius:9px;background:linear-gradient(90deg,#F7B32B,#F08A24)"></div>
+    </div>
+
+    <div style="background:rgba(255,255,255,.62);border-radius:22px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;margin-top:10px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8960F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#F7B32B"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        <span style="font-size:15px;font-weight:700;flex-grow:1">對方</span>
+        <span style="font-size:20px;font-weight:900">96</span>
+      </div>
+      <div style="height:8px;border-radius:4px;background:rgba(43,36,51,.12)"><div style="width:96%;height:100%;border-radius:4px;background:#F7B32B"></div></div>
+      <span style="font-size:13px;opacity:.75">「我心情不錯」</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
+      <button style="all:unset;box-sizing:border-box;cursor:pointer;height:54px;border-radius:27px;background:#2B2433;color:#FFF7E8;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF7E8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>我好了　+10</button>
+      <button style="all:unset;box-sizing:border-box;cursor:pointer;height:54px;border-radius:27px;border:2px solid #2B2433;color:#2B2433;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B2433" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>我有點煩　−10</button>
+    </div>
+
+    <div style="margin-top:8px;font-size:13px;line-height:1.9;opacity:.85">
+      <div style="font-weight:700;font-size:13px;margin-bottom:2px">最近發生的事</div>
+      我好了，耐心 +10<br>我需要先喘口氣，耐心 −10<br>對方好了
+    </div>
+  </div>
+</div>
+
+<!-- widgets -->
+<div style="display:flex;flex-direction:column;gap:36px;padding-top:40px">
+  <div style="font-size:13px;font-weight:700;color:#7A6F66;letter-spacing:.1em">小尺寸</div>
+  <div style="width:170px;height:170px;border-radius:34px;background:linear-gradient(180deg,#FFE7B0,#FFC48A);box-sizing:border-box;padding:16px;color:#2B2433;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 24px rgba(120,80,30,.18)">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;opacity:.75">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8960F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#F7B32B"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>對方<span style="margin-left:auto;font-size:14px">96</span>
+    </div>
+    <div>
+      <div style="font-size:50px;font-weight:900;line-height:1;letter-spacing:-.02em">71</div>
+      <div style="font-size:13px;font-weight:700;margin-top:2px">我心情不錯</div>
+      <div style="height:9px;border-radius:5px;background:rgba(43,36,51,.15);margin-top:8px"><div style="width:71%;height:100%;border-radius:5px;background:linear-gradient(90deg,#F7B32B,#F08A24)"></div></div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:700;color:#7A6F66;letter-spacing:.1em">中尺寸</div>
+  <div style="width:360px;height:170px;border-radius:34px;background:linear-gradient(180deg,#FFE7B0,#FFC48A);box-sizing:border-box;padding:16px 18px;color:#2B2433;display:flex;gap:16px;align-items:center;box-shadow:0 8px 24px rgba(120,80,30,.18)">
+    <div style="flex-grow:1;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:12px;font-weight:700;opacity:.75">對方</span><span style="margin-left:auto;font-size:14px;font-weight:900">96</span></div>
+      <div style="height:6px;border-radius:3px;background:rgba(43,36,51,.15)"><div style="width:96%;height:100%;border-radius:3px;background:#F7B32B"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-top:4px"><span style="font-size:14px;font-weight:700">我</span><span style="margin-left:auto;font-size:34px;font-weight:900;line-height:1">71</span></div>
+      <div style="height:11px;border-radius:6px;background:rgba(43,36,51,.15)"><div style="width:71%;height:100%;border-radius:6px;background:linear-gradient(90deg,#F7B32B,#F08A24)"></div></div>
+      <span style="font-size:11px;opacity:.75">「我心情不錯」</span>
+    </div>
+    <div style="width:104px;display:flex;flex-direction:column;gap:8px">
+      <div style="height:40px;border-radius:20px;background:#2B2433;color:#FFF7E8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px">↑ 我好了</div>
+      <div style="height:40px;border-radius:20px;border:2px solid #2B2433;box-sizing:border-box;color:#2B2433;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px">↓ 有點煩</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":940,"height":900}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

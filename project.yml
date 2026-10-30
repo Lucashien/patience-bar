@@ -1,0 +1,85 @@
+name: PatienceBar
+options:
+  bundleIdPrefix: com.lucashsien
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: 5YCKGQ339N
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: "11.0.0"
+targets:
+  PatienceBar:
+    type: application
+    platform: iOS
+    sources:
+      - PatienceBar
+      - Shared
+    dependencies:
+      - target: PatienceWidget
+      - package: Firebase
+        product: FirebaseAuth
+      - package: Firebase
+        product: FirebaseFirestore
+    info:
+      path: PatienceBar/Info.plist
+      properties:
+        CFBundleDisplayName: 耐心條
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    entitlements:
+      path: PatienceBar/PatienceBar.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.lucashsien.patiencebar
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucashsien.patiencebar
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+  PatienceWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - PatienceWidget
+      - Shared
+    info:
+      path: PatienceWidget/Info.plist
+      properties:
+        CFBundleDisplayName: 耐心條
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: PatienceWidget/PatienceWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.lucashsien.patiencebar
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucashsien.patiencebar.widget
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+  PatienceBarTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - PatienceBarTests
+    dependencies:
+      - target: PatienceBar
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  PatienceBar:
+    build:
+      targets:
+        PatienceBar: all
+    test:
+      targets:
+        - PatienceBarTests

@@ -1,0 +1,9 @@
+Config/Secrets.xcconfig
+Canteen.xcodeproj/
+**/Info.plist
+**/*.entitlements
+build/
+DerivedData/
+.DS_Store
+xcuserdata/
+GoogleService-Info.plist
