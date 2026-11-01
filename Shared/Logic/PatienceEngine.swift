@@ -3,7 +3,7 @@ import Foundation
 /// 耐心條規則：純函式、無 I/O，app 與 widget 共用。
 enum PatienceEngine {
     static let maxValue = 100.0
-    static let regenPerMinute = 0.5
+    static let regenPerMinute = 0.0  // 不自動回升，完全由使用者控制
     static let floorValue = 10.0
     static let pokeLossCap = 40.0
     static let chargeGainCap = 60.0

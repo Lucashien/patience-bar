@@ -21,8 +21,9 @@ struct PairingView: View {
                     Text("讓藏在表面下的煩躁，被對方輕輕看見。")
                         .font(.subheadline).foregroundStyle(.secondary)
 
-                    TextField("我的暱稱", text: $name)
+                    TextField("先取個暱稱", text: $name)
                         .textFieldStyle(.roundedBorder).padding(.top, 12)
+                        .onChange(of: name) { _, v in if v.count > 8 { name = String(v.prefix(8)) } }
 
                     if FirebaseSupport.isConfigured {
                         remoteSection
@@ -48,21 +49,22 @@ struct PairingView: View {
     private var remoteSection: some View {
         VStack(spacing: 12) {
             Button {
-                run { await store.createRemote(name: trimmedName.isEmpty ? "我" : trimmedName) }
+                run { await store.createRemote(name: trimmedName) }
             } label: {
                 Label("建立配對，產生邀請碼", systemImage: "heart.fill").frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent).controlSize(.large)
+            .disabled(trimmedName.isEmpty)
 
             HStack {
                 TextField("對方的邀請碼", text: $code)
                     .textInputAutocapitalization(.characters).autocorrectionDisabled()
                     .textFieldStyle(.roundedBorder)
                 Button("加入") {
-                    run { await store.joinRemote(code: code, name: trimmedName.isEmpty ? "我" : trimmedName) }
+                    run { await store.joinRemote(code: code, name: trimmedName) }
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(code.trimmingCharacters(in: .whitespacesAndNewlines).count != 12)
+                .disabled(trimmedName.isEmpty || code.trimmingCharacters(in: .whitespacesAndNewlines).count != 12)
             }
         }
     }

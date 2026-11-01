@@ -7,6 +7,8 @@ protocol CoupleBackend: AnyObject {
     func observe(_ handler: @escaping @MainActor (CoupleSnapshot) -> Void)
     func stop()
     func perform(_ action: PatienceAction) async throws
+    /// 設定自己的大頭貼（已壓縮的 JPEG）；nil 代表移除。
+    func setAvatar(_ data: Data?) async throws
 }
 
 enum BackendError: LocalizedError {

@@ -58,6 +58,7 @@ final class FirestoreBackend: CoupleBackend {
     private var inviteCode: String?
     private var names: [String: String] = [:]
     private var states: [String: PatienceState] = [:]
+    private var avatars: [String: Data] = [:]
     private var events: [EventItem] = []
 
     private init(coupleId: String, viewerId: String) {
@@ -137,14 +138,17 @@ final class FirestoreBackend: CoupleBackend {
             guard let docs = snap?.documents else { return }
             var names: [String: String] = [:]
             var states: [String: PatienceState] = [:]
+            var avatars: [String: Data] = [:]
             for doc in docs {
                 let d = doc.data()
+                if let a = d["avatar"] as? Data { avatars[doc.documentID] = a }
                 if let n = d["name"] as? String { names[doc.documentID] = n }
                 if let s = FirestoreCoding.parseState(d) { states[doc.documentID] = s }
             }
             Task { @MainActor in
                 self?.names = names
                 self?.states = states
+                self?.avatars = avatars
                 self?.emit()
             }
         })
@@ -168,7 +172,12 @@ final class FirestoreBackend: CoupleBackend {
     private func emit() {
         handler?(CoupleSnapshot(meId: viewerId, partnerId: members.first { $0 != viewerId },
                                 names: names, states: states, events: events,
-                                inviteCode: inviteCode, isLocal: false))
+                                inviteCode: inviteCode, isLocal: false, avatars: avatars))
+    }
+
+    func setAvatar(_ data: Data?) async throws {
+        let ref = db.collection("couples").document(coupleId).collection("users").document(viewerId)
+        try await ref.setData(["avatar": data.map { $0 as Any } ?? FieldValue.delete()], merge: true)
     }
 
     func perform(_ action: PatienceAction) async throws {

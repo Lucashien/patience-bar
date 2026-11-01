@@ -36,9 +36,15 @@ struct CoupleSnapshot: Equatable {
     var events: [EventItem]
     var inviteCode: String?
     var isLocal: Bool
+    var avatars: [String: Data] = [:]
 
     var meName: String { names[meId] ?? "我" }
-    var partnerName: String { partnerId.flatMap { names[$0] } ?? "對方" }
+    var partnerName: String {
+        guard let n = partnerId.flatMap({ names[$0] }), n != meName else { return "對方" }
+        return n
+    }
+    var meAvatar: Data? { avatars[meId] }
+    var partnerAvatar: Data? { partnerId.flatMap { avatars[$0] } }
     var meState: PatienceState? { states[meId] }
     var partnerState: PatienceState? { partnerId.flatMap { states[$0] } }
 }

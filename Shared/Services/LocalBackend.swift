@@ -8,6 +8,7 @@ final class LocalBackend: CoupleBackend {
         var states: [String: PatienceState]
         var events: [EventItem]
         var viewer: String
+        var avatars: [String: Data]?
     }
 
     static let meId = "me"
@@ -66,6 +67,14 @@ final class LocalBackend: CoupleBackend {
         emit()
     }
 
+    func setAvatar(_ avatar: Data?) async throws {
+        var all = data.avatars ?? [:]
+        all[data.viewer] = avatar
+        data.avatars = all
+        persist()
+        emit()
+    }
+
     private func persist() {
         if let raw = try? JSONEncoder().encode(data) {
             SharedCache.defaults.set(raw, forKey: Self.key)
@@ -74,6 +83,7 @@ final class LocalBackend: CoupleBackend {
 
     private func emit() {
         handler?(CoupleSnapshot(meId: data.viewer, partnerId: partnerOfViewer, names: data.names,
-                                states: data.states, events: data.events, inviteCode: nil, isLocal: true))
+                                states: data.states, events: data.events, inviteCode: nil, isLocal: true,
+                                avatars: data.avatars ?? [:]))
     }
 }

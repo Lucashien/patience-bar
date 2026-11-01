@@ -8,6 +8,8 @@ struct SharedSnapshot: Codable {
     var names: [String: String]
     var states: [String: PatienceState]
     var pending: [PendingAction]
+    /// 舊版快取沒有這個欄位，所以用 optional。
+    var avatars: [String: Data]?
 }
 
 enum SharedCache {
@@ -31,7 +33,8 @@ enum SharedCache {
     static func save(from snap: CoupleSnapshot) {
         let pending = load()?.pending ?? []
         store(SharedSnapshot(meId: snap.meId, partnerId: snap.partnerId,
-                             names: snap.names, states: snap.states, pending: pending))
+                             names: snap.names, states: snap.states, pending: pending,
+                             avatars: snap.avatars))
         WidgetCenter.shared.reloadAllTimelines()
     }
 

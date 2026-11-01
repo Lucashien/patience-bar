@@ -118,6 +118,14 @@ final class CoupleStore {
         }
     }
 
+    func setAvatar(_ data: Data?) {
+        guard let backend else { return }
+        Task {
+            do { try await backend.setAvatar(data) }
+            catch { errorMessage = error.localizedDescription }
+        }
+    }
+
     /// 小工具 / Siri 排進佇列的動作，在 app 取得機會時送出。
     func drainPending() async {
         guard let backend else { return }

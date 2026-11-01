@@ -25,10 +25,9 @@ final class PatienceEngineTests: XCTestCase {
         XCTAssertEqual(PatienceEngine.weather(for: 14.9), .thunderstorm)
     }
 
-    func testRegenOverTimeCapsAtMax() {
+    func testNoAutoRegenOverTime() {
         let s = fresh(base: 50)
-        XCTAssertEqual(PatienceEngine.current(s, now: t0.addingTimeInterval(20 * 60), calendar: cal), 60, accuracy: 0.001)
-        XCTAssertEqual(PatienceEngine.current(s, now: t0.addingTimeInterval(600 * 60), calendar: cal), 100, accuracy: 0.001)
+        XCTAssertEqual(PatienceEngine.current(s, now: t0.addingTimeInterval(600 * 60), calendar: cal), 50, accuracy: 0.001)
     }
 
     func testNewDayResetsToFull() {
@@ -79,7 +78,7 @@ final class PatienceEngineTests: XCTestCase {
     func testPokeNeverGoesBelowFloor() {
         let r = PatienceEngine.poke(fresh(base: 11), now: t0, calendar: cal)
         XCTAssertEqual(r.state.base, 10)
-        XCTAssertEqual(PatienceEngine.poke(r.state, now: t0.addingTimeInterval(1), calendar: cal).applied, 0.0083, accuracy: 0.001)
+        XCTAssertEqual(PatienceEngine.poke(r.state, now: t0.addingTimeInterval(1), calendar: cal).applied, 0, accuracy: 0.001)
     }
 
     func testChargeRespectsDailyCapAndMax() {
