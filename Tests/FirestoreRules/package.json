@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "firebase emulators:exec --project demo-patience-rules --only firestore \"node security.test.cjs\""
+    "test": "firebase emulators:exec --config ../../firebase.json --project demo-patience-rules --only firestore \"node security.test.cjs\""
   },
   "engines": {
     "node": ">=22"

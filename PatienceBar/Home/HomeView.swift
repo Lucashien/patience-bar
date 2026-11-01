@@ -1,9 +1,13 @@
 import SwiftUI
+import PhotosUI
 
 struct HomeView: View {
     @Environment(CoupleStore.self) private var store
     @State private var showEvents = false
     @State private var confirmLeave = false
+    @State private var showPicker = false
+    @State private var pickedItem: PhotosPickerItem?
+    @State private var cropTarget: CropTarget?
 
     var body: some View {
         if let snap = store.snapshot {
@@ -48,6 +52,22 @@ struct HomeView: View {
         .foregroundStyle(ink)
         .tint(ink)
         .sheet(isPresented: $showEvents) { EventsView(snap: snap) }
+        .photosPicker(isPresented: $showPicker, selection: $pickedItem, matching: .images)
+        .fullScreenCover(item: $cropTarget) { t in
+            AvatarCropView(image: t.image) { store.setAvatar($0) }
+        }
+        .onChange(of: pickedItem) { _, item in
+            guard let item else { return }
+            Task {
+                if let raw = try? await item.loadTransferable(type: Data.self),
+                   let img = AvatarImage.prepare(raw) {
+                    cropTarget = CropTarget(image: img)
+                } else {
+                    store.errorMessage = "這張照片讀不進來，換一張試試。"
+                }
+                pickedItem = nil
+            }
+        }
         .confirmationDialog("要離開目前的配對嗎？", isPresented: $confirmLeave) {
             Button("離開", role: .destructive) { store.leave() }
         }
@@ -81,6 +101,11 @@ struct HomeView: View {
             Menu {
                 Picker("主題", selection: $store.theme) {
                     ForEach(AppTheme.allCases) { Text($0.title).tag($0) }
+                }
+                Divider()
+                Button("更換大頭貼", systemImage: "person.crop.circle") { showPicker = true }
+                if snap.meAvatar != nil {
+                    Button("移除大頭貼", systemImage: "trash") { store.setAvatar(nil) }
                 }
                 Divider()
                 Button("離開配對", role: .destructive) { confirmLeave = true }
@@ -172,6 +197,10 @@ private struct WeatherBody: View {
                         .symbolRenderingMode(.multicolor)
                 }
                 .frame(height: 130)
+                .overlay(alignment: .topLeading) {
+                    AvatarView(data: snap.meAvatar, name: snap.meName, size: 56,
+                               ring: .white, lineWidth: 3)
+                }
                 Text("\(Int(mine.rounded()))")
                     .font(.system(size: 92, weight: .black, design: .rounded))
                     .contentTransition(.numericText())
@@ -183,9 +212,11 @@ private struct WeatherBody: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Image(systemName: theirWeather.symbol).symbolRenderingMode(.multicolor)
+                    AvatarView(data: snap.partnerAvatar, name: snap.partnerName, size: 32,
+                               ring: .white, lineWidth: 2)
                     Text(snap.partnerName).font(.subheadline.weight(.bold))
                     Spacer()
+                    Image(systemName: theirWeather.symbol).symbolRenderingMode(.multicolor)
                     Text("\(Int(theirs.rounded()))").font(.title3.weight(.black))
                 }
                 PatienceBarView(value: theirs, height: 8)
@@ -221,6 +252,8 @@ private struct GameBody: View {
         VStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
+                    AvatarView(data: snap.partnerAvatar, name: snap.partnerName, size: 30,
+                               ring: AppTheme.gameInk, lineWidth: 2.5)
                     Text(snap.partnerName).font(.system(size: 16, weight: .black, design: .rounded))
                     Text("「\(Copy.statusLine(theirWeather))」").font(.footnote.weight(.bold)).opacity(0.65)
                     Spacer()
@@ -233,13 +266,18 @@ private struct GameBody: View {
 
             VStack(spacing: 12) {
                 HStack(spacing: 10) {
-                    ZStack {
-                        Circle().fill(Color(hex: 0xFFD23F))
-                        Circle().stroke(AppTheme.gameInk, lineWidth: 3)
-                        Image(systemName: weather.symbol).font(.system(size: 22, weight: .bold))
-                            .symbolRenderingMode(.monochrome)
-                    }
-                    .frame(width: 48, height: 48)
+                    AvatarView(data: snap.meAvatar, name: snap.meName, size: 52,
+                               ring: AppTheme.gameInk, lineWidth: 3)
+                        .overlay(alignment: .bottomTrailing) {
+                            ZStack {
+                                Circle().fill(Color(hex: 0xFFD23F))
+                                Circle().stroke(AppTheme.gameInk, lineWidth: 2)
+                                Image(systemName: weather.symbol).font(.system(size: 11, weight: .bold))
+                                    .symbolRenderingMode(.monochrome)
+                            }
+                            .frame(width: 24, height: 24)
+                            .offset(x: 4, y: 4)
+                        }
                     VStack(alignment: .leading, spacing: 0) {
                         Text("我的耐心 HP").font(.footnote.weight(.bold)).opacity(0.65)
                         Text(Copy.statusLine(weather)).font(.system(size: 17, weight: .black, design: .rounded))

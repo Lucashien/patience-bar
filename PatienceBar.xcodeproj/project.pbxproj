@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047360FE1B4AE5F73C68DD2A /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDBD4A463AC6ED86CEA013 /* AvatarView.swift */; };
 		0BA4FA98F46628439643F7A3 /* WeatherStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */; };
 		1CF6F9FF79FEC46C4F038C78 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D96A67A4C188C5D8D99530 /* Theme.swift */; };
 		1D1AEEDE4E170F06141337AC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F5802E3D562159F6F5F2D4C /* FirebaseFirestore */; };
@@ -23,6 +24,7 @@
 		5A404EC8392397D0E4662D8B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7E26DC78CE87E64A9E9540BC /* FirebaseAuth */; };
 		5ABB3F37E7ACB48030E8F248 /* SharedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C0B08F42001075824A70C /* SharedCache.swift */; };
 		5CD51EB78547B6A39B07CCF5 /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB1662BDC7490E61566540 /* PairingView.swift */; };
+		6320463D176A87239B26C0F4 /* AvatarCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF915C8332AF8BB81906B323 /* AvatarCropView.swift */; };
 		65AEF9A9BA4166AE865A33DE /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE430D43902C1A879D181B /* Copy.swift */; };
 		672718BA9916DDBEB2A757D1 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED560A387844AB77516AD183 /* EventItem.swift */; };
 		6B8D95BBA9082F6F03DA89E9 /* CoupleBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED287397EE0E485A280503 /* CoupleBackend.swift */; };
@@ -39,10 +41,12 @@
 		BB5209B2092BC6A647AD29B6 /* PatienceIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98924635BFBD859C372C236 /* PatienceIntents.swift */; };
 		C4DD26ED76AA7F4A4F3C3498 /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C55156F382005884C63511 /* Shortcuts.swift */; };
 		C6CE1B85815F6797976475A0 /* CoupleBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED287397EE0E485A280503 /* CoupleBackend.swift */; };
+		D1D48E4B0860854A754280EE /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDBD4A463AC6ED86CEA013 /* AvatarView.swift */; };
 		D7107CC91A9B9A9E75F4979F /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F0198ECEE2009693255D6 /* EventsView.swift */; };
 		DD5D7627E4E0330F623A0FB8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D96A67A4C188C5D8D99530 /* Theme.swift */; };
 		DECDD8395F9BA3325A9A9323 /* PatienceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3D9D172922CFBFB7E5082 /* PatienceEngine.swift */; };
 		E0980538A51701FCA02B21D9 /* ActionApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */; };
+		ED93AABD489F5228B7E6F85B /* AvatarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB058280C6AA135F4E0B52 /* AvatarTests.swift */; };
 		FB8565F1BBD4089537DB7986 /* SharedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C0B08F42001075824A70C /* SharedCache.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,7 @@
 		43BDAA37CE0E8E27824422AE /* PatienceBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PatienceBar.entitlements; sourceTree = "<group>"; };
 		4A4E1C4FB88B71C12BF807FA /* PatienceEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEngineTests.swift; sourceTree = "<group>"; };
 		50C55156F382005884C63511 /* Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
+		55DDBD4A463AC6ED86CEA013 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStyle.swift; sourceTree = "<group>"; };
 		6A59E8D40EF0B5078EAEA348 /* ActionApplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApplier.swift; sourceTree = "<group>"; };
 		6E61DF14386278DEB7542CBC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		955E3C28F3EB859E9424BC8B /* CoupleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleStore.swift; sourceTree = "<group>"; };
 		9EED287397EE0E485A280503 /* CoupleBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleBackend.swift; sourceTree = "<group>"; };
 		A03480F205EDED4F2F5DFB31 /* Patience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patience.swift; sourceTree = "<group>"; };
+		A3DB058280C6AA135F4E0B52 /* AvatarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTests.swift; sourceTree = "<group>"; };
 		AA3C0B08F42001075824A70C /* SharedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCache.swift; sourceTree = "<group>"; };
 		B15FA7C8984E163E88CAB844 /* FirestoreBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreBackend.swift; sourceTree = "<group>"; };
 		B6D96A67A4C188C5D8D99530 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		C51A768B33832AF32A26F37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C98924635BFBD859C372C236 /* PatienceIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceIntents.swift; sourceTree = "<group>"; };
 		CA307CBCCCCEBEA4DE62ED67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF915C8332AF8BB81906B323 /* AvatarCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCropView.swift; sourceTree = "<group>"; };
 		ED560A387844AB77516AD183 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		F195F6F7A7DB05510C9B1DB2 /* PatienceWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceWidget.swift; sourceTree = "<group>"; };
 		FB3BB36098225C406B00DFA7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -126,6 +133,7 @@
 		0F8031611883850CE28861F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				55DDBD4A463AC6ED86CEA013 /* AvatarView.swift */,
 				B6D96A67A4C188C5D8D99530 /* Theme.swift */,
 				57A5DD4E0576E327A87F30B0 /* WeatherStyle.swift */,
 			);
@@ -220,6 +228,7 @@
 		E3FF79F86CBF9C3137B94CE7 /* PatienceBarTests */ = {
 			isa = PBXGroup;
 			children = (
+				A3DB058280C6AA135F4E0B52 /* AvatarTests.swift */,
 				4A4E1C4FB88B71C12BF807FA /* PatienceEngineTests.swift */,
 			);
 			path = PatienceBarTests;
@@ -228,6 +237,7 @@
 		E94BB5878A9253DFDAC90A48 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DF915C8332AF8BB81906B323 /* AvatarCropView.swift */,
 				BB6F0198ECEE2009693255D6 /* EventsView.swift */,
 				FB3BB36098225C406B00DFA7 /* HomeView.swift */,
 			);
@@ -380,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2935EFF511B36B46F13A2CE8 /* ActionApplier.swift in Sources */,
+				D1D48E4B0860854A754280EE /* AvatarView.swift in Sources */,
 				65AEF9A9BA4166AE865A33DE /* Copy.swift in Sources */,
 				C6CE1B85815F6797976475A0 /* CoupleBackend.swift in Sources */,
 				A54FFDD14CAD3240B921EBAF /* EventItem.swift in Sources */,
@@ -399,6 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0980538A51701FCA02B21D9 /* ActionApplier.swift in Sources */,
+				6320463D176A87239B26C0F4 /* AvatarCropView.swift in Sources */,
+				047360FE1B4AE5F73C68DD2A /* AvatarView.swift in Sources */,
 				914BC6991BFF4CBF785B5291 /* Copy.swift in Sources */,
 				6B8D95BBA9082F6F03DA89E9 /* CoupleBackend.swift in Sources */,
 				988077F00D8674E84BC430BA /* CoupleStore.swift in Sources */,
@@ -425,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED93AABD489F5228B7E6F85B /* AvatarTests.swift in Sources */,
 				743134211B627BB54C261DC0 /* PatienceEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

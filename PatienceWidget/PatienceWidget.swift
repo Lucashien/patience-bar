@@ -32,6 +32,7 @@ struct MiniBar: View {
     let date: Date
     var prominent = false
     var quote: String? = nil
+    var avatar: Data? = nil
 
     @Environment(\.widgetRenderingMode) private var mode
 
@@ -44,10 +45,15 @@ struct MiniBar: View {
 
         VStack(alignment: .leading, spacing: prominent ? 6 : 4) {
             HStack(spacing: 6) {
-                Image(systemName: weather.symbol)
-                    .font(.system(size: prominent ? 18 : 14, weight: .semibold))
-                    .symbolRenderingMode(full ? .multicolor : .monochrome)
-                    .widgetAccentable()
+                if let avatar {
+                    AvatarView(data: avatar, name: title, size: prominent ? 30 : 22,
+                               ring: full ? .white : .clear, lineWidth: full ? 1.5 : 0)
+                } else {
+                    Image(systemName: weather.symbol)
+                        .font(.system(size: prominent ? 18 : 14, weight: .semibold))
+                        .symbolRenderingMode(full ? .multicolor : .monochrome)
+                        .widgetAccentable()
+                }
                 Text(title)
                     .font(.system(size: prominent ? 15 : 12, weight: .semibold, design: .rounded))
                     .opacity(prominent ? 1 : 0.75)
@@ -113,6 +119,11 @@ struct PatienceWidgetView: View {
         }
     }
 
+    private var myAvatar: Data? { entry.snapshot.flatMap { $0.avatars?[$0.meId] } }
+    private var theirAvatar: Data? {
+        entry.snapshot.flatMap { s in s.partnerId.flatMap { s.avatars?[$0] } }
+    }
+
     // MARK: 天氣窗
 
     private func weatherLayout(partnerName: String, mine: PatienceState?, theirs: PatienceState?, weather: Weather) -> some View {
@@ -139,9 +150,9 @@ struct PatienceWidgetView: View {
 
     private func bars(partnerName: String, mine: PatienceState?, theirs: PatienceState?, weather: Weather) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            MiniBar(title: partnerName, state: theirs, date: entry.date)
+            MiniBar(title: partnerName, state: theirs, date: entry.date, avatar: theirAvatar)
             MiniBar(title: "我", state: mine, date: entry.date, prominent: true,
-                    quote: family == .systemSmall ? nil : Copy.statusLine(weather))
+                    quote: family == .systemSmall ? nil : Copy.statusLine(weather), avatar: myAvatar)
         }
         .frame(maxHeight: .infinity, alignment: .center)
     }
@@ -159,7 +170,10 @@ struct PatienceWidgetView: View {
 
         let cards = VStack(spacing: 8) {
             VStack(spacing: 4) {
-                HStack {
+                HStack(spacing: 5) {
+                    if let a = theirAvatar {
+                        AvatarView(data: a, name: partnerName, size: 16, ring: ink, lineWidth: 1.5)
+                    }
                     Text(partnerName).font(.system(size: 11, weight: .black, design: .rounded))
                     Spacer()
                     Text("\(Int(theirValue.rounded()))").font(.system(size: 11, weight: .black, design: .rounded))
@@ -172,7 +186,10 @@ struct PatienceWidgetView: View {
             .overlay(RoundedRectangle(cornerRadius: 12).stroke(ink, lineWidth: 2.5))
 
             VStack(spacing: 5) {
-                HStack(alignment: .firstTextBaseline) {
+                HStack(alignment: .center, spacing: 5) {
+                    if let a = myAvatar {
+                        AvatarView(data: a, name: "我", size: 24, ring: ink, lineWidth: 2)
+                    }
                     Text("我").font(.system(size: 12, weight: .black, design: .rounded))
                     Spacer()
                     Text("\(Int(myValue.rounded()))").font(.system(size: 30, weight: .black, design: .rounded))

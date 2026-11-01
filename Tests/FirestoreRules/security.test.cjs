@@ -41,14 +41,21 @@ const { doc, collection, setDoc, getDoc, getDocs, updateDoc, deleteDoc, serverTi
     await check('member reads partner profile',()=>assertSucceeds(getDoc(user(partner,'owner'))));
     await check('member cannot change partner name',()=>assertFails(updateDoc(user(partner,'owner'),{name:'spoofed'})));
     await check('cannot create nonmember profile',()=>assertFails(setDoc(user(owner,'outsider'),{name:'intruder',base:100})));
-    await check('intended partner action and event transaction succeeds',()=>assertSucceeds(runTransaction(partner,async tx=>{
-      await tx.get(user(partner,'owner'));
-      tx.update(user(partner,'owner'),{base:90});
-      tx.set(event(partner,'valid'),{actorId:'partner',targetId:'owner',type:'poke',delta:-10,createdAt:serverTimestamp()});
+    await check('member updates own bar and logs event in a transaction',()=>assertSucceeds(runTransaction(owner,async tx=>{
+      await tx.get(user(owner,'owner'));
+      tx.update(user(owner,'owner'),{base:90});
+      tx.set(event(owner,'valid'),{actorId:'owner',targetId:'owner',type:'selfAdjust',delta:-10,createdAt:serverTimestamp()});
     })));
+    await check('partner cannot change my bar',()=>assertFails(updateDoc(user(partner,'owner'),{base:0})));
+    await check('partner cannot overwrite my bar',()=>assertFails(setDoc(user(partner,'owner'),{base:0})));
+    await check('partner cannot change my bar via transaction',()=>assertFails(runTransaction(partner,async tx=>{
+      await tx.get(user(partner,'owner'));
+      tx.update(user(partner,'owner'),{base:0});
+    })));
+    await check('member can still update own bar',()=>assertSucceeds(updateDoc(user(partner,'partner'),{base:80})));
     await check('cannot forge event actor',()=>assertFails(setDoc(event(partner,'forged'),{actorId:'owner',targetId:'partner'})));
     await check('cannot target nonmember',()=>assertFails(setDoc(event(partner,'bad-target'),{actorId:'partner',targetId:'outsider'})));
-    await check('events remain append-only',()=>assertFails(updateDoc(event(partner,'valid'),{delta:500})));
+    await check('events remain append-only',()=>assertFails(updateDoc(event(owner,'valid'),{delta:500})));
     await check('outsider still blocked after pairing',()=>assertFails(getDoc(user(outsider,'owner'))));
     await check('simultaneous joins admit only one partner',async()=>{
       const raceCode='ZXCVBNMA2345';

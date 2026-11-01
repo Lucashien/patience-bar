@@ -36,12 +36,8 @@ service cloud.firestore {
 
       match /users/{uid} {
         allow read: if isMember(coupleId);
-        allow create, update: if isMember(coupleId)
-          && uid in get(/databases/$(database)/documents/couples/$(coupleId)).data.members
-          && (uid == request.auth.uid
-            || request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-              'base', 'updatedAt', 'dayKey', 'pokeLossToday', 'chargeGainToday', 'combo', 'lastPokeAt'
-            ]));
+        // 核心機制：只有本人能寫自己的耐心條，伴侶也不行。
+        allow create, update: if isMember(coupleId) && uid == request.auth.uid;
       }
       match /events/{eventId} {
         allow read: if isMember(coupleId);

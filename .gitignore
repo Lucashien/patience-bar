@@ -7,3 +7,5 @@ DerivedData/
 .DS_Store
 xcuserdata/
 GoogleService-Info.plist
+
+node_modules/
